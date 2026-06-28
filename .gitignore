@@ -12,7 +12,6 @@ env/
 # Database files
 *.db
 *.sqlite3
-src/database/real_estate.db
 
 # Test scripts
 test_db.py
