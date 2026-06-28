@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env
+
+# Database files
+*.db
+*.sqlite3
+src/database/real_estate.db
+
+# Test scripts
+test_db.py
+
+# OS generated files
+.DS_Store
+Thumbs.db
