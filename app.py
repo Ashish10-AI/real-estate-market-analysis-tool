@@ -5,15 +5,15 @@ import plotly.graph_objects as go
 import os
 import sys
 
-# Add parent directory to path to import analytics
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Add src directory to path to import analytics
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
 from analytics.analytics import AnalyticsEngine
 
 st.set_page_config(page_title="Real Estate Market Intelligence", layout="wide", initial_sidebar_state="expanded")
 
 @st.cache_data
 def get_data():
-    db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database', 'real_estate.db'))
+    db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'src', 'database', 'real_estate.db'))
     engine = AnalyticsEngine(db_path=db_path)
     return engine.load_properties_data()
 
@@ -23,7 +23,7 @@ def main():
 
     # Load data
     df = get_data()
-    db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database', 'real_estate.db'))
+    db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'src', 'database', 'real_estate.db'))
     engine = AnalyticsEngine(db_path=db_path)
 
     if df.empty:
